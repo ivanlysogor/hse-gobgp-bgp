@@ -12,7 +12,7 @@ Download from https://www.vagrantup.com/downloads.html and install
 ```git clone https://github.com/ivanlysogor/hse-gobgp-bgp```
 #### 3. Setup environment
 ```
-cd hse-vyos-ospf
+cd hse-gobgp-bgp
 vagrant up
 ```
 #### 4. Configure virtual routers
