@@ -1,34 +1,34 @@
-# gobgp-vagrant-playground
+# GoBGP Practical Activity
+### Task description
+You have the following topology:
 
-vagrant-based playground for gobgp
+![Network topology](diagram.png)
 
-### starting environment
-
+GoBGP is installed and peering is configured. Configure BGP policies to ensure that link "A" has higher preference than
+link "B" and traffic between ```rt1``` and ```rt3``` passed through ```rt2``` router.
+#### 1. Setup Vagrant
+Download from https://www.vagrantup.com/downloads.html and install
+#### 2. Pull repository
+```git clone https://github.com/ivanlysogor/hse-vyos-ospf```
+#### 3. Setup environment
 ```
-% vagrant up
+cd hse-vyos-ospf
+vagrant up
 ```
+#### 4. Configure virtual routers
+Configure virtual routers:
+- configure BGP policies to change route priorities
 
-- This will setup 3 VMs (rt0, rt1 and rt2).
-- Each gobgpd is executed in init script
+Hints:
+- you can connect to you virtual routers with command ```vagrant ssh rt1```
+- GoBGP configuration documentation: https://github.com/osrg/gobgp
+- GoBGP config file located in /etc folder (/etc/gobgpd.conf)
 
-### per-VM operation
 
-#### Editing config
+#### 5. Validate
+Traceroute rt3 eth3 interface IP address from rt1 eth1 interface to ensure that traffic pass through rt1/rt2 eth4 interfaces.
 
-- Configuration file is placed in /vagrant/bgp.${VMID}.conf
-- VMID is equivalent to instance ID(e.g. '0' for 'rt0')
+Test it for opposite direction traffic too.
 
-#### Restart gobgpd
-
-```
-% sudo /etc/init.d/gobgpd stop
-% sudo ID=${VMID} /etc/init.d/gobgpd start
-```
-
-- Specifying ID(VMID) is required to pick up corresponding configuration in /vagrant/bgp.${VMID}.conf
-
-#### show log
-
-```
-% cat /var/log/syslog | grep bgp
-```
+#### 5. Destroy VM
+```vagrant destroy```
