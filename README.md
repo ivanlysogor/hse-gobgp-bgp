@@ -9,7 +9,7 @@ link "B" and traffic between ```rt1``` and ```rt3``` passed through ```rt2``` ro
 #### 1. Setup Vagrant
 Download from https://www.vagrantup.com/downloads.html and install
 #### 2. Pull repository
-```git clone https://github.com/ivanlysogor/hse-vyos-ospf```
+```git clone https://github.com/ivanlysogor/hse-gobgp-bgp```
 #### 3. Setup environment
 ```
 cd hse-vyos-ospf
