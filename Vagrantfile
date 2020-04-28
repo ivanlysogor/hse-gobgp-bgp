@@ -1,4 +1,10 @@
 Vagrant.configure("2") do |config|
+
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+  end
+
   config.vm.define "rt1" do |server|
     server.vm.box = "generic/ubuntu1804"
     server.vm.hostname = "rt1"
