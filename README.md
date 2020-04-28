@@ -23,7 +23,8 @@ Hints:
 - you can connect to you virtual routers with command ```vagrant ssh rt1```
 - GoBGP configuration documentation: https://github.com/osrg/gobgp
 - GoBGP config file located in /etc folder (/etc/gobgpd.conf)
-
+- GoBGP policy configuration - https://github.com/osrg/gobgp/blob/master/docs/sources/policy.md
+- Zebra interface accessible via ```telnet localhost 2601``` with password ```zebra``` and enable ```zebra```
 
 #### 5. Validate
 Traceroute rt3 eth3 interface IP address from rt1 eth1 interface to ensure that traffic pass through rt1/rt2 eth4 interfaces.

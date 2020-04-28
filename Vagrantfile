@@ -5,6 +5,8 @@ Vagrant.configure("2") do |config|
 
     # Copy GoBGP config
     server.vm.provision "file", source: "gobgpd.rt1.conf", destination: "/tmp/gobgpd.conf"
+    server.vm.provision "file", source: "zebra.conf", destination: "/tmp/zebra.conf"
+
 
     # for outside world
     server.vm.network "private_network", ip: "10.10.0.10", netmask: "255.255.255.0"
@@ -24,6 +26,7 @@ Vagrant.configure("2") do |config|
 
     # Copy GoBGP config
     server.vm.provision "file", source: "gobgpd.rt2.conf", destination: "/tmp/gobgpd.conf"
+    server.vm.provision "file", source: "zebra.conf", destination: "/tmp/zebra.conf"
 
     # for outside world
     server.vm.network "private_network", ip: "10.10.0.20", netmask: "255.255.255.0"
@@ -43,7 +46,7 @@ Vagrant.configure("2") do |config|
 
     # Copy GoBGP config
     server.vm.provision "file", source: "gobgpd.rt3.conf", destination: "/tmp/gobgpd.conf"
-
+    server.vm.provision "file", source: "zebra.conf", destination: "/tmp/zebra.conf"
 
     # for outside world
     server.vm.network "private_network", ip: "10.10.0.30", netmask: "255.255.255.0"
