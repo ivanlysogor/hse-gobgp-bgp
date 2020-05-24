@@ -33,3 +33,11 @@ Test it for opposite direction traffic too.
 
 #### 5. Destroy VM
 ```vagrant destroy```
+
+#### 6. Solution
+Latest commit contains solution
+(don't forget `net.ipv4.ip_forward = 1` on rt2 as well)
+![rt1](rt1.png)
+![rt2](rt2.png)
+![rt3](rt3.png)
+
