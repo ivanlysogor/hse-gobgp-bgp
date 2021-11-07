@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     server.vm.network "private_network", ip: "172.20.10.10", netmask: "255.255.255.0"
 
     # do basic setup
-    server.vm.provision "shell", path: "basic-setup.sh"
+    server.vm.provision "shell", privileged: true, path: "basic-setup.sh"
 
   end
 
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
     server.vm.network "private_network", ip: "172.20.20.10", netmask: "255.255.255.0"
 
     # do basic setup
-    server.vm.provision "shell", path: "basic-setup.sh"
+    server.vm.provision "shell", privileged: true, path: "basic-setup.sh"
 
   end
 
@@ -60,7 +60,7 @@ Vagrant.configure("2") do |config|
     server.vm.network "private_network", ip: "172.20.30.10", netmask: "255.255.255.0"
 
     # do basic setup
-    server.vm.provision "shell", path: "basic-setup.sh"
+    server.vm.provision "shell", privileged: true, path: "basic-setup.sh"
 
   end
 
